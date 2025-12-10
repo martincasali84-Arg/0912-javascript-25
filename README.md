@@ -45,7 +45,7 @@ git commit -m "Arranco la PWA"
 4. Ver el listado de comits
 
 ```sh
-git log --online
+git log --oneline
 ```
 
 5. Actualizo el repositorio remoto con los cambios realizado en el repositorio local
