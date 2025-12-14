@@ -45,5 +45,48 @@ toogleBotton.addEventListener('click', openSidebar);
 closeButton.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
 
+function renderLista(){
+     console.log('se hace el renderizado...');
+     const lista= document.querySelector('#lista');
 
+     const ul= document.createElement('ul');
+     listaproductos.forEach((prod, indice) => {
+          ul.innerHTML += `
 
+              <li class="flex items-center justify-between bg-white rounded-lg shadow p-3 mb-2 hover:bg-gray-50 transition">
+                <!--Icono de Producto-->
+                <span class="flex items-center justify-center w-10 text-indigo-600">
+                  <i class="material-icons text-2xl">shopping_cart</i>
+                </span>
+                <!--Nombre de Producto-->
+                <span class="flex-1 text-gray-800 font-medium truncate w-32">
+                 ${prod.nombre}</span>
+                <!--Cantidad-->
+                <span class="w-24">
+                  <label for="" class="block text-xs text-gray-500">Cantidad</label> 
+                  <input type="text" value="${prod.cantidad}" class="mt-1 w-full border border-gray-300 rounded-md text-sm p-1 text-center focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                </span>
+                <!--Precio-->
+                <span class="w-24">
+                  <label for="" class="block text-xs text-gray-500">Precio</label> 
+                  <input type="text"  value="${prod.precio}" class="mt-1 w-full border border-gray-300 rounded-md text-sm p-1 text-center focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                </span>
+                <!--Borrar Producto-->
+                <span class="w-12 justify-center">
+                  <button class="flex items-center justify-around bg-red-500 hover:bg-red-600 text-white rounded-full w-10 h-10 shadow transition cursor-pointer ms-2">
+                  data-inice="${indice}"
+                    <i class="material-icons">remove_shopping_cart</i>
+                  </button>
+                </span>
+              </li>
+          `;
+     });
+
+lista.appendChild(ul);
+     }
+
+function start(){
+  console.log('se cargo el DOM!');
+}
+
+document.addEventListener('DOMContentLoaded', start);
