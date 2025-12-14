@@ -1,4 +1,18 @@
 import './style.css'
+
+//----------------------//
+// ! variables globales //
+//----------------------//
+
+let listaproductos = [
+
+ {nombre: "carne", cantidad: 2, precio: 12.4},
+ {nombre:  "pan", cantidad: 5, precio: 23.4},
+ {nombre:  "fideo",cantidad: 3, precio: 21.4},
+ {nombre: "leche", cantidad: 8, precio: 32.4},
+ {nombre: "pollo", cantidad: 1, precio: 42.4},
+];
+
 /*Selecciono los elementos id del html*/
      /*overlay*/
      /*sidebar*/
