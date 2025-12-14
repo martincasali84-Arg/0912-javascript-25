@@ -11,7 +11,7 @@ let listaproductos = [
  {nombre:  "fideo",cantidad: 3, precio: 21.4},
  {nombre: "leche", cantidad: 8, precio: 32.4},
  {nombre: "pollo", cantidad: 1, precio: 42.4},
-];
+]
 
 /*Selecciono los elementos id del html*/
      /*overlay*/
@@ -48,7 +48,7 @@ overlay.addEventListener('click', closeSidebar);
 function renderLista(){
      console.log('se hace el renderizado...')
 
-     const lista= document.querySelector('#lista')
+     const Lista= document.querySelector('#Lista')
 
      const ul= document.createElement('ul')
           ul.innerHTML = '' 
@@ -65,12 +65,12 @@ function renderLista(){
                 <span class="flex-1 text-gray-800 font-medium truncate w-32">
                  ${prod.nombre}</span>
                 <!--Cantidad-->
-                <span class="w-24">
+                <span class="w-21 me-3">
                   <label for="" class="block text-xs text-gray-500">Cantidad</label> 
                   <input type="text" value="${prod.cantidad}" class="mt-1 w-full border border-gray-300 rounded-md text-sm p-1 text-center focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 </span>
                 <!--Precio-->
-                <span class="w-24">
+                <span class="w-21">
                   <label for="" class="block text-xs text-gray-500">Precio</label> 
                   <input type="text"  value="${prod.precio}" class="mt-1 w-full border border-gray-300 rounded-md text-sm p-1 text-center focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 </span>
@@ -85,11 +85,12 @@ function renderLista(){
           `
      })
 
-lista.appendChild(ul)
+Lista.appendChild(ul)
      }
 
 function start(){
   console.log('se cargo el DOM!')
+  renderLista()
 }
 
 document.addEventListener('DOMContentLoaded', start);
