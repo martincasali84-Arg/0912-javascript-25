@@ -46,12 +46,12 @@ closeButton.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
 
 function renderLista(){
-     console.log('se hace el renderizado...');
+     console.log('se hace el renderizado...')
 
-     const lista= document.querySelector('#lista');
+     const lista= document.querySelector('#lista')
 
-     const ul= document.createElement('ul');
-          ul.innerHTML += '' 
+     const ul= document.createElement('ul')
+          ul.innerHTML = '' 
 
      listaproductos.forEach((prod, indice) => {
           ul.innerHTML += `
@@ -89,7 +89,7 @@ lista.appendChild(ul)
      }
 
 function start(){
-  console.log('se cargo el DOM!');
+  console.log('se cargo el DOM!')
 }
 
 document.addEventListener('DOMContentLoaded', start);
