@@ -47,9 +47,12 @@ overlay.addEventListener('click', closeSidebar);
 
 function renderLista(){
      console.log('se hace el renderizado...');
+
      const lista= document.querySelector('#lista');
 
      const ul= document.createElement('ul');
+          ul.innerHTML += '' 
+
      listaproductos.forEach((prod, indice) => {
           ul.innerHTML += `
 
@@ -79,10 +82,10 @@ function renderLista(){
                   </button>
                 </span>
               </li>
-          `;
-     });
+          `
+     })
 
-lista.appendChild(ul);
+lista.appendChild(ul)
      }
 
 function start(){
