@@ -87,10 +87,19 @@ function renderLista(){
 
 Lista.appendChild(ul)
      }
+function eventoIngresoProducto(){
+      documentquerySelector('#btn-entrada-producto').addEventListener('click',())=>{
+         console.log('btn-entrada-producto')
+                  
+}
+
+
+
 
 function start(){
   console.log('se cargo el DOM!')
   renderLista()
+  eventoIngresoProducto()
 }
 
 document.addEventListener('DOMContentLoaded', start);
