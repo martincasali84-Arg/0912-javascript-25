@@ -12,6 +12,13 @@ let listaproductos = [
  {nombre: "leche", cantidad: 8, precio: 32.4},
  {nombre: "pollo", cantidad: 1, precio: 42.4},
 ]
+  
+let crearlista = true; // Creo esta bandera para evitar la repeticion de la lista de productos//
+let ul;               // variable para crear la lista ul dinamicamente //
+
+//----------------------//
+// ! Sidebar Funciones  //
+//----------------------//  
 
 /*Selecciono los elementos id del html*/
      /*overlay*/
@@ -50,7 +57,10 @@ function renderLista(){
 
      const Lista= document.querySelector('#Lista')
 
-     const ul= document.createElement('ul')
+     if (crearlista){
+
+     ul= document.createElement('ul')
+     }
           ul.innerHTML = '' 
 
      listaproductos.forEach((prod, indice) => {
@@ -76,8 +86,8 @@ function renderLista(){
                 </span>
                 <!--Borrar Producto-->
                 <span class="w-12 justify-center">
-                  <button class="flex items-center justify-around bg-red-500 hover:bg-red-600 text-white rounded-full w-10 h-10 shadow transition cursor-pointer ms-2">
-                  data-inice="${indice}"
+                  <button class="flex items-center justify-around bg-red-500 hover:bg-red-600 text-white rounded-full w-10 h-10 shadow transition cursor-pointer ms-2"
+                  data-inice="${indice}">
                     <i class="material-icons">remove_shopping_cart</i>
                   </button>
                 </span>
@@ -86,15 +96,30 @@ function renderLista(){
      })
 
 Lista.appendChild(ul)
+crearlista = false;
+
+
      }
 function eventoIngresoProducto(){
-      documentquerySelector('#btn-entrada-producto').addEventListener('click',())=>{
+      document.querySelector('#btn-entrada-producto').addEventListener('click',()=>{
          console.log('btn-entrada-producto')
-                  
+
+         const input = document.getElementById('ingrese-producto')
+         const producto = input.value
+
+         console.log(producto)
+         if (producto){
+          listaproductos.push({nombre: producto, cantidad: 1, precio: 1})
+          renderLista()
+         input.value = ''
+         }
+         else{
+          alert("Debe ingresar un producto valido!");
+          
+         }
+
+      })            
 }
-
-
-
 
 function start(){
   console.log('se cargo el DOM!')
