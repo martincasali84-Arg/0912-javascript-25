@@ -56,13 +56,13 @@ git push
 ```
 # clase 03 - JavaScript AWP (Progressive Web App)
 
-## Crear la carpeta dist con los archivos finales para subir a un servidor
+1. Crear la carpeta dist con los archivos finales para subir a un servidor
 
 ```sh
 
 npm run bulid
 ```
-## Previsualizar la carpeta dist para controlar localmente si todo lo que se hizo funciona.
+2. Previsualizar la carpeta dist para controlar localmente si todo lo que se hizo funciona.
 
 ```sh
 
