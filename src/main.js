@@ -115,16 +115,28 @@ function eventoIngresoProducto(){
          }
          else{
           alert("Debe ingresar un producto valido!");
-          
          }
 
       })            
 }
+function eventoBorrarProducto(){
+  
+  document.querySelector('#btn-borrar-producto').addEventListener('click', ()=>{
+      console.log('borrar producto en indice:', indice)
+
+      if(confirm("¿Esta seguro que desea eliminar el ultimo producto?")){
+        console.log('borrando producto...')
+      }
+
+    })
+  }
+
 
 function start(){
   console.log('se cargo el DOM!')
   renderLista()
   eventoIngresoProducto()
+  eventoBorrarProducto()
 }
 
 document.addEventListener('DOMContentLoaded', start);
