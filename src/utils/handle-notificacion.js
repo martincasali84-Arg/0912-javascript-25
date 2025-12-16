@@ -13,7 +13,7 @@ const handleNotificacion = (objetoMensaje, callback) => {
         if (result.isConfirmed) {
             callback();
           Swal.fire({
-            title: objetoMensaje,
+            title: objetoMensaje.textoSecundario,
             text: objetoMensaje.descripcionSecundaria,
             icon: "success"
           });

@@ -54,3 +54,17 @@ git log --oneline
 git push -u origin main  #primera vez 
 git push
 ```
+# clase 03 - JavaScript AWP (Progressive Web App)
+
+## Crear la carpeta dist con los archivos finales para subir a un servidor
+
+```sh
+
+npm run bulid
+```
+## Previsualizar la carpeta dist para controlar localmente si todo lo que se hizo funciona.
+
+```sh
+
+npm run preview #tiene que estar la carpeta dist creada 
+```

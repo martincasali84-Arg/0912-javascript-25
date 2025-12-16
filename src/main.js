@@ -149,7 +149,7 @@ function eventoBorrarProducto(){
       const objMensaje = {
         textoPrincipal: "Desea eliminar todos los productos de la lista?",
         descripcion: "Esta accion no se puede deshacer!",
-        textoSecundario: "Lista Borrada Correctamente",
+        textoSecundario: "Borrado Correctamente",
         descripcionSecundaria: "Lista sin Productos!"
       }
 
