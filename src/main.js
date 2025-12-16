@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+import handleNotificacion from './utils/handle-notificacion'
 import './style.css'
 
 //----------------------//
@@ -122,15 +124,43 @@ function eventoIngresoProducto(){
 function eventoBorrarProducto(){
   
   document.querySelector('#btn-borrar-producto').addEventListener('click', ()=>{
-      console.log('borrar producto en indice:', indice)
-
-      if(confirm("¿Esta seguro que desea eliminar el ultimo producto?")){
-        console.log('borrando producto...')
+    console.log('btn-borrar-producto')
+     
+      /*Swal.fire({
+        title: "Desea eliminar todos los productos de la lista?",
+        text: "Esta accion no se puede deshacer!",
+         icon: "warning",
+         showCancelButton: true,
+         confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Si, eliminar todo!"
+            }).then((result) => {
+        if (result.isConfirmed) {
+          listaproductos = []
+          renderLista()
+          
+          Swal.fire({
+            title: "Borrado!",
+            text: "Productos Borrados Correctamente",
+            icon: "success"
+          });
+  }
+});*/ 
+      const objMensaje = {
+        textoPrincipal: "Desea eliminar todos los productos de la lista?",
+        descripcion: "Esta accion no se puede deshacer!",
+        textoSecundario: "Lista Borrada Correctamente",
+        descripcionSecundaria: "Lista sin Productos!"
       }
 
-    })
-  }
+    handleNotificacion(objMensaje,()=>{
+      listaproductos = []
+          renderLista()
 
+  })
+    
+  })
+}
 
 function start(){
   console.log('se cargo el DOM!')
