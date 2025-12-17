@@ -88,9 +88,10 @@ function renderLista(){
                 </span>
                 <!--Borrar Producto-->
                 <span class="w-12 justify-center">
-                  <button class="flex items-center justify-around bg-red-500 hover:bg-red-600 text-white rounded-full w-10 h-10 shadow transition cursor-pointer ms-2"
-                  data-inice="${indice}">
-                    <i class="material-icons">remove_shopping_cart</i>
+                  <button 
+                       class="material-icons btn-borrar flex items-center justify-around bg-red-500 hover:bg-red-600 text-white rounded-full w-10 h-10 shadow transition cursor-pointer ms-2"
+                  data-indice="${indice}">
+                    remove_shopping_cart
                   </button>
                 </span>
               </li>
@@ -161,12 +162,45 @@ function eventoBorrarProducto(){
     
   })
 }
+function borrarProducto(indice){
+  
+  const nombreProductoABorrar = listaproductos[indice].nombre
 
+    const objMensaje = {
+        textoPrincipal: `¿Esta seguro de eliminar el Producto ${nombreProductoABorrar}?`,
+        descripcion: "Esta accion no se puede deshacer!",
+        textoSecundario: "Borrado Correctamente",
+        descripcionSecundaria: `Producto ${nombreProductoABorrar} eliminado de la lista!`
+      }
+    handleNotificacion(objMensaje,()=>{
+      listaproductos.splice(indice,1)
+      renderLista()
+  }) 
+}
+
+
+function eventoBorrarunProducto(){
+  document.getElementById('Lista').addEventListener('click',(e)=>{
+    //console.log('Hicieron click sobre cualquier elemento de la lista')
+    //console.log(e.target)
+
+    //console.log(e.target.classList.contains('btn-borrar'))//true o false
+    if (e.target.classList.contains('btn-borrar'))
+    {
+      //console.log(e.target.dataset.inice)
+
+      const indice = e.target.dataset.indice
+      borrarProducto(indice)
+  }
+})
+}
 function start(){
   console.log('se cargo el DOM!')
   renderLista()
   eventoIngresoProducto()
   eventoBorrarProducto()
+  eventoBorrarunProducto()
+
 }
 
 document.addEventListener('DOMContentLoaded', start);
